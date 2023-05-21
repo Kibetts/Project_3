@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightsalmon;
+}
+.main{
+    box-sizing: border-box;
+    width: 26.87em;
+    padding: 2.5em 3em;
+    background-color: beige;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+}
+.gameContainer{
+    position: relative;
+    width: 100%;
+    display: grid;
+}
