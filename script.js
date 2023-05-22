@@ -63,3 +63,9 @@ const matrixGenerator = (cardValues, size = 4) => {
 	   </div>
 	   `;
 	}
+	const movesCounter = () => {
+		movesCount += 1;
+		moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+	  };
+	
+	  gameContainer.style.gridTemplateColumns = `repeat(${4},auto)`;
