@@ -73,65 +73,68 @@ const matrixGenerator = (cardValues, size = 4) => {
 	  tiles = document.querySelectorAll(".card-container");
   tiles.forEach((card) => {
     card.addEventListener("click", () => {
-     
-      if (!card.classList.contains("matched")) {
-        
-        card.classList.add("flipped");
-		if (!activeTile) {
-         
+		
+		if (!card.classList.contains("matched")) {
+		  
+		  card.classList.add("flipped");
+		 
+		  if (!activeTile) {
+			
 			activeTile = card;
-		   
+			
 			activeTileValue = card.getAttribute("data-card-value");
 		  } else {
-		   
+			
 			movesCounter();
-
-			econdTile = card;
-          let secondTileValue = card.getAttribute("data-card-value");
-          if (activeTileValue == secondTileValue) {
-            
-            activeTile.classList.add("matched");
-            secondTile.classList.add("matched");
-          
-            activeTile = false;
-			winCount += 1;
-
-			if (winCount == Math.floor(cardValues.length / 2)) {
+			
+			secondTile = card;
+			let secondTileValue = card.getAttribute("data-card-value");
+			if (activeTileValue == secondTileValue) {
+			  
+			  activeTile.classList.add("matched");
+			  secondTile.classList.add("matched");
+			 
+			  activeTile = false;
+			
+			  winCount += 1;
+			
+			  if (winCount == Math.floor(cardValues.length / 2)) {
 				result.innerHTML = `<h2>You Won</h2>
 			  <h4>Moves: ${movesCount}</h4>`;
 				stopGame();
-			  } else {
-          
-				let [tempFirst, tempSecond] = [activeTile, secondTile];
-				activeTile= false;
-				secondTile = false;
-				let delay = setTimeout(() => {
-				  tempFirst.classList.remove("flipped");
-				  tempSecond.classList.remove("flipped");
-				}, 900);
 			  }
+			} else {
+			
+			  let [tempFirst, tempSecond] = [activeTile, secondTile];
+			  activeTile= false;
+			  secondTile = false;
+			  let delay = setTimeout(() => {
+				tempFirst.classList.remove("flipped");
+				tempSecond.classList.remove("flipped");
+			  }, 900);
 			}
 		  }
-		});
+		}
 	  });
-	};
+	});
+  };
+ 
+  startButton.addEventListener("click", () => {
+	movesCount = 0;
+	seconds = 0;
+	minutes = 0;
+	
+	controls.classList.add("finish");
+	stopButton.classList.remove("finish");
+	startButton.classList.add("finish");
+	
+	interval = setInterval(timeGenerator, 1000);
+	
+	moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+	initializer();
+  });
 
-	tartButton.addEventListener("click", () => {
-		movesCount = 0;
-		seconds = 0;
-		minutes = 0;
-
-		controls.classList.add("finish");
-		stopButton.classList.remove("finish");
-		startButton.classList.add("finish");
-
-		interval = setInterval(timeGenerator, 1000);
-
-		moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
-  initializer();
-});
-
-const initializer = () => {
+  const initializer = () => {
 	result.innerText = "";
 	winCount = 0;
 	let cardValues = generateRandom(4);
@@ -139,11 +142,11 @@ const initializer = () => {
 	matrixGenerator(cardValues,4);
   };
   stopButton.addEventListener(
-    "click",
-    (stopGame = () => {
-      controls.classList.remove("finish");
-      stopButton.classList.add("finish");
-      startButton.classList.remove("finish");
-      clearInterval(interval);
-    })
-  );
+	  "click",
+	  (stopGame = () => {
+		controls.classList.remove("finish");
+		stopButton.classList.add("finish");
+		startButton.classList.remove("finish");
+		clearInterval(interval);
+	  })
+	);
