@@ -69,3 +69,19 @@ const matrixGenerator = (cardValues, size = 4) => {
 	  };
 	
 	  gameContainer.style.gridTemplateColumns = `repeat(${4},auto)`;
+
+	  tiles = document.querySelectorAll(".card-container");
+  tiles.forEach((card) => {
+    card.addEventListener("click", () => {
+     
+      if (!card.classList.contains("matched")) {
+        
+        card.classList.add("flipped");
+		if (!activeTile) {
+         
+			activeTile = card;
+		   
+			activeTileValue = card.getAttribute("data-card-value");
+		  } else {
+		   
+			movesCounter();
