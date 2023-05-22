@@ -1,26 +1,22 @@
-*{
-    margin: 0;
+* {
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
     box-sizing: border-box;
-}
-
-body{
-    background-color: lightsalmon;
-}
-.main{
-    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #f4c531;
+  }
+  .wrapper {
+    box-sizing: content-box;
     width: 26.87em;
     padding: 2.5em 3em;
-    background-color: beige;
+    background-color: #ffffff;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    border-radius: 10px;
-}
-.gameContainer{
-    position: relative;
-    width: 100%;
-    display: grid;
-}
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+  }
+  
