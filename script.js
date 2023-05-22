@@ -19,3 +19,14 @@ const pictures = [
   { name: "rook", image: "./rook.png" },
  
 ];
+const generateRandom = (size = 4) => {
+    let tempList = [...pictures];
+    let cardValues = [];
+    size = (size * 3) / 2;
+    for (let i = 0; i < size; i++) {
+      const randomIndex = Math.floor(Math.random() * tempList.length);
+      cardValues.push(tempList[randomIndex]);
+      tempList.splice(randomIndex, 1);
+    }
+    return cardValues;
+  };
