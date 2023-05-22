@@ -18,3 +18,22 @@
     transform: translate(-50%, -50%);
     border-radius: 5px;
   }
+  stats {
+    text-align: center;
+    margin-bottom: 19px;
+  }
+  .stats span {
+    font-weight: 600;
+  }
+  .card-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+  }
+  .game-general {
+    position: relative;
+    display: grid;
+    width: 100%;
+    gap: 10px;
+  }
