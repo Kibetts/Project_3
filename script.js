@@ -130,3 +130,20 @@ const matrixGenerator = (cardValues, size = 4) => {
 		moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
   initializer();
 });
+
+const initializer = () => {
+	result.innerText = "";
+	winCount = 0;
+	let cardValues = generateRandom(4);
+	console.log(cardValues);
+	matrixGenerator(cardValues,4);
+  };
+  stopButton.addEventListener(
+    "click",
+    (stopGame = () => {
+      controls.classList.remove("finish");
+      stopButton.classList.add("finish");
+      startButton.classList.remove("finish");
+      clearInterval(interval);
+    })
+  );
