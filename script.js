@@ -30,3 +30,21 @@ const generateRandom = (size = 4) => {
     }
     return cardValues;
   };
+  let seconds = 0,
+  minutes = 0;
+
+let movesCount = 0,
+  winCount = 0;
+
+const timeGenerator = () => {
+  seconds += 1;
+  
+  if (seconds >= 60) {
+    minutes += 1;
+    seconds = 0;
+  }
+ 
+  let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+};
