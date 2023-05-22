@@ -120,3 +120,13 @@ const matrixGenerator = (cardValues, size = 4) => {
 		movesCount = 0;
 		seconds = 0;
 		minutes = 0;
+
+		controls.classList.add("finish");
+		stopButton.classList.remove("finish");
+		startButton.classList.add("finish");
+
+		interval = setInterval(timeGenerator, 1000);
+
+		moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  initializer();
+});
