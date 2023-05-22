@@ -85,3 +85,13 @@ const matrixGenerator = (cardValues, size = 4) => {
 		  } else {
 		   
 			movesCounter();
+
+			econdTile = card;
+          let secondTileValue = card.getAttribute("data-card-value");
+          if (activeTileValue == secondTileValue) {
+            
+            activeTile.classList.add("matched");
+            secondTile.classList.add("matched");
+          
+            activeTile = false;
+			winCount += 1;
