@@ -48,3 +48,18 @@ const timeGenerator = () => {
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
   timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
+const matrixGenerator = (cardValues, size = 4) => {
+	gameContainer.innerHTML = "";
+	cardValues = [...cardValues, ...cardValues];
+	
+	cardValues.sort(() => Math.random() - 0.5);
+	for (let i = 0; i < size * 3; i++) {
+	 
+	  gameContainer.innerHTML += `
+	   <div class="card-container" data-card-value="${cardValues[i].name}">
+		  <div class="card-before">*</div>
+		  <div class="card-after">
+		  <img src="${cardValues[i].image}" class="image"/></div>
+	   </div>
+	   `;
+	}
