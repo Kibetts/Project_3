@@ -11,8 +11,8 @@
   .main {
     position: absolute;
     box-sizing: content-box;
-    width: 430px;
-    height: 500px;
+    width: 650px;
+    height: 600px;
     padding: 40px 48px;
     left: 50%;
     top: 50%;
@@ -36,6 +36,7 @@
     width: 100px;
     height: 100px;
     cursor: pointer;
+
   }
   .game-general {
     position: relative;
