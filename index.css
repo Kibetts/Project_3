@@ -5,12 +5,14 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   body {
-    background-color: rebeccapurple;
+    background-image: url(./assets/backimage.jpg);
+    background-size: cover;
   }
   .main {
     position: absolute;
     box-sizing: content-box;
     width: 430px;
+    height: 500px;
     padding: 40px 48px;
     left: 50%;
     top: 50%;
@@ -21,7 +23,10 @@
 
   .stats {
     text-align: center;
-    margin-bottom: 19px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-width: 10px;
+    border-radius: 10px;
   }
   .stats span {
     font-weight: 600;
@@ -57,10 +62,10 @@
   }
   .tile-after {
     background-color: bisque;
-    transform: rotateY(180deg);
+    transform: rotateY(100deg);
   }
   .card-container.flipped .card-before {
-    transform: rotateY(180deg);
+    transform: rotateY(100deg);
   }
   .card-container.flipped .tile-after {
     transform: rotateY(0deg);
@@ -82,7 +87,7 @@
     display: block;
     color: cornsilk;
     margin: 18px auto 0 auto;
-    background-color: black;
+    background-color:green;
     
   }
   .controls-container button {

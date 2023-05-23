@@ -54,7 +54,7 @@ const timeGenerator = () => {
   
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+  timeValue.innerHTML = `<span>Time taken:</span>${minutesValue}:${secondsValue}`;
 };
 
 
@@ -76,7 +76,7 @@ const matrixGenerator = (cardValues, size = 4) => {
  
 const movesCounter = () => {
   movesCount += 1;
-  moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+  moves.innerHTML = `<span>Moves done:</span>${movesCount}`;
 };
   
   gameContainer.style.gridTemplateColumns = `repeat(${4},auto)`;
@@ -111,7 +111,7 @@ const movesCounter = () => {
           
             if (winCount == Math.floor(cardValues.length / 2)) {
               result.innerHTML = `<h2>You Won</h2>
-            <h4>Moves: ${movesCount}</h4>`;
+            <h4>Moves : ${movesCount}</h4>`;
               stopGame();
             }
           } else {
@@ -141,10 +141,10 @@ startButton.addEventListener("click", () => {
  
   interval = setInterval(timeGenerator, 1000);
  
-  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  moves.innerHTML = `<span>Moves done:</span> ${movesCount}`;
   initializer();
 });
-
+0.5
 const initializer = () => {
   result.innerText = "";
   winCount = 0;
@@ -154,7 +154,7 @@ const initializer = () => {
 };
 stopButton.addEventListener(
     "click",
-    (stopGame = () => {
+    (QUIT = () => {
       controls.classList.remove("finish");
       stopButton.classList.add("finish");
       startButton.classList.remove("finish");
